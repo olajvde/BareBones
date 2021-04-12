@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Header</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href='/stylesheets/style.css'>
+</head>
+
+<body>
+    <div class="header-nightsky">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <a class="navbar-brand" href="/">BareBones</a>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        {{#if user}}
+                        <li><h4>Hi {{user.fName}} 😚</h4></li>
+                        <li>
+                            <a  href="#">Your Posts 🧐</a>
+                            
+                        </li>
+                        <li>
+                            <a href="/users/logout">Logout? 😪</a>
+                        </li>
+                        {{else}}
+
+                            <li>
+                            <a  href="#">Login </a>
+                        </li>
+                            <li>
+                            <a  href="#">Register </a>
+                        </li>
+
+                        {{/if}}
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="hero">
+            {{!-- <h2>Just Speak Your Mind ...</h2> --}}
+            <p>Just Speak Your Mind...</p>
+            <a href="/posts/all-posts"> <div class="btn btn-primary">All Posts</div>
+</a>
+            <a href="#deets"> <div class="btn btn-primary">Builder's Details</div></a>
+            
+        </div>
+    </div>
+
+
+    
+
+
+<section class="content">
+    <div class="home">
+        <a href="/" class="btn btn-primary">Home</a>
+    </div>
+            
+
+    <div class="container-fluid">
+    <div class="col-sm-8 card1">
+        
+         {{#each posts}}
+
+        <div class="single-title">
+        <h1><u>{{this.title}}</u></h1> 
+        </div>
+    
+        <div class="single-author">
+            {{this.author}} 
+        </div>
+        <div class="single-body">
+            
+            {{this.body}}
+        </div>
+
+</div>
+
+   
+{{/each}}
+<div class="home">
+        <a href="/" class="btn btn-primary">Home</a><br><br><br><br>
+    </div>
+        
+    </div>
+   
+</section>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
