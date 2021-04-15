@@ -58,7 +58,6 @@ module.exports.homePosts = async (req, res) => {
 };
 
 //get post by id
-
 module.exports.getPost = async (req, res) => {
   Post.findById(req.params.id, (err, doc) => {
     if (!err) {
