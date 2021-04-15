@@ -63,7 +63,6 @@ module.exports.getPost = async (req, res) => {
   Post.findById(req.params.id, (err, doc) => {
     if (!err) {
       res.render("perPost", {posts: doc});
-     
     }
   });
 };
@@ -76,7 +75,6 @@ module.exports.yourPosts = async (req, res) => {
       res.redirect("/");
     } else {
       res.render("yourPosts", {yours: docs});
-      
     }
   }).sort({createdAt: -1});
 };
@@ -88,6 +86,5 @@ module.exports.allPosts = async (req, res) => {
       res.send("Error!!");
     }
     res.render("index", {posts: docs});
-  })
-  .sort({createdAt: -1});
+  }).sort({createdAt: -1});
 };
