@@ -63,7 +63,7 @@ module.exports.getPost = async (req, res) => {
   Post.findById(req.params.id, (err, doc) => {
     if (!err) {
       res.render("perPost", {posts: doc});
-      console.log(res.locals.user.username);
+     
     }
   });
 };
